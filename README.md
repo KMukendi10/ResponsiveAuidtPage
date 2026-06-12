@@ -1,83 +1,77 @@
-# # Mzansi Eats - Responsiveness Audit
+# Mzansi Eats - Responsive Design Audit
 
 ## Overview
 
-This project focuses on auditing and improving the responsiveness of the Mzansi Eats food delivery website. The website was tested across different screen sizes to identify layout and usability issues. Responsive design fixes were then applied using CSS Flexbox, Grid, and media queries.
+This project was completed as part of the Week 7 Responsive Design Audit task. The goal was to test an existing webpage at different screen sizes, identify responsiveness issues, document the findings, and apply fixes to improve the user experience across devices.
 
-## Objectives
+## Objective
 
-* Test the website on mobile, tablet, and desktop screen sizes.
-* Identify responsiveness issues affecting the user experience.
-* Apply CSS fixes to improve layout adaptability.
-* Document findings and solutions in an audit report.
+The page was tested using Chrome DevTools at the following screen sizes:
+
+* Mobile: 375px
+* Tablet: 768px
+* Desktop: 1280px
+
+The audit focused on finding layout problems, overflow issues, and elements that did not adapt properly to smaller screens.
 
 ## Technologies Used
 
-* HTML5
-* CSS3
-* Flexbox
-* CSS Grid
+* HTML
+* CSS
 * Chrome DevTools
+* CSS Grid
+* Flexbox
+* Media Queries
 
-## Screen Sizes Tested
+## Issues Identified and Fixed
 
-| Device Type | Width  |
-| ----------- | ------ |
-| Mobile      | 375px  |
-| Tablet      | 768px  |
-| Desktop     | 1280px |
+### 1. Missing Viewport Meta Tag
 
-## Issues Identified
+The page did not contain a viewport meta tag, causing mobile devices to display the page at an incorrect scale.
 
-1. Hero image overflowed on smaller screens.
-2. Menu cards used fixed-width columns causing horizontal scrolling.
-3. Contact section had a fixed width that broke the layout on mobile devices.
-4. Header and footer layouts became cramped on smaller screens.
+**Fix:** Added the viewport meta tag inside the `<head>` section.
 
-## Fixes Applied
+### 2. Fixed Width Hero Image
 
-* Converted fixed image widths to responsive widths.
-* Updated the card grid to use responsive CSS Grid properties.
-* Replaced fixed-width containers with flexible layouts.
-* Added media queries for mobile and tablet devices.
-* Improved header and footer layouts using Flexbox.
+The hero image used a fixed width of 1200px, creating horizontal scrolling on smaller screens.
+
+**Fix:** Changed the image width to `100%` to make it responsive.
+
+### 3. Rigid Menu Grid Layout
+
+The menu cards used a fixed four-column grid layout that overflowed on mobile and tablet devices.
+
+**Fix:** Replaced the fixed layout with a responsive CSS Grid using `auto-fit` and `minmax()`.
+
+### 4. Contact Section Overflow
+
+The contact section used fixed widths and a two-column layout that did not adapt well to smaller screens.
+
+**Fix:** Converted fixed widths to flexible widths and added media queries to stack content vertically on smaller devices.
+
 
 ## Project Structure
 
 ```text
-project-folder/
+ResponsiveAuditPage/
 │
-├── index.html
 ├── docs/
 │   └── responsiveness-audit.md
+|   └── screenshots
+├── responsive-audit-page.html
 └── README.md
 ```
 
-## How to Run
+## Testing
 
-1. Clone the repository:
+The website was tested at:
 
-```bash
-git clone <repository-url>
-```
+* 375px (Mobile)
+* 768px (Tablet)
+* 1280px (Desktop)
 
-2. Open the project folder.
-
-3. Open `index.html` in your browser.
-
-4. Use Chrome DevTools Device Toolbar to test responsiveness.
-
-## Lessons Learned
-
-Through this project, I gained practical experience in:
-
-* Identifying common responsiveness issues.
-* Using Flexbox and CSS Grid for adaptive layouts.
-* Applying media queries for different screen sizes.
-* Testing websites across multiple devices using Chrome DevTools.
+After applying the fixes, the layout adapts correctly across all tested screen sizes without horizontal scrolling.
 
 ## Author
 
-**Kazadi Shadrack Mukendi**
-
-Aspiring Full Stack Web Developer currently building skills in HTML, CSS, JavaScript, responsive design, and version control.
+**Kazadi Mukendi**
